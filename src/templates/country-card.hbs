@@ -4,7 +4,7 @@
 
     <div class='js-countryItem'>
       <div class='country__content'>
-        <h2 class='js-country-name'>{{name}}</h2>
+        <h2 class='js-country-name'>{{name.common}}</h2>
         <ul class='country-card__list'>
           <li class='country-card__item'><span
               class='country-card__item--subtitle'
@@ -14,18 +14,18 @@
           <li class='country-card__item'><span
               class='country-card__item--subtitle'
             >Population:</span>
-            {{population}}
+            {{area}}
           </li>
           <li class='country-card__item'><span
               class='country-card__item--subtitle'
             >Languages:</span>
             {{#each languages}}
-              <li class='country-card__item--language'>{{this.name}}</li>
+              <li class='country-card__item--language'>{{this}}</li>
             {{/each}}
           </li>
         </ul>
       </div>
-      <div><img class='country-card__image' src='{{flag}} ' alt='Flag' /></div>
+      <div><img class='country-card__image' {{#each flags}} src="{{this}}" {{/each}} alt='Flag' /></div>
 
     </div>
   </li>
