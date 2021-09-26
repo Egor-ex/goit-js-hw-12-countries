@@ -22,13 +22,13 @@ function onSearch() {
                 error({
                     text: 'Too many matches found. Please enter a more specific query!',
                 });
-            } else if (country.status === 404) {
+            } else if (country.status === 200) {
                 error({
                     text: 'No country has been found. Please enter a more specific query!',
                 });
             } else if (country.length === 1) {
                 onRenderCountryCard(country);
-            } else if (country.length <= 10) {
+            } else if (country.length >= 2 && country.length <= 10) {
                 onRenderListCountries(country);
             }
         })
